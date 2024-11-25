@@ -16,13 +16,15 @@ internal class Program
     {
         string url = "https://t.me/codingprogramm";
 
+        string Git = "https://github.com/SenejuDev/Telegram-bot";
+
         Random random = new Random();
 
         int val = random.Next(0, 10);
 
         if (update.Message?.Text == "/start")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, "Добро пожаловать\fнапишите команду чтобы узнать все команды\f .команды", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, "Добро пожаловать\fнапишите команду чтобы узнать все команды\f .команды\f .гит", replyToMessageId: update.Message?.MessageThreadId);
         }
         if (update.Message?.Text == ".команды")
         {
@@ -47,6 +49,10 @@ internal class Program
         if (update.Message.Text == ".рандом")
         {
             await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"Рандомное число\f{val}", replyToMessageId: update.Message?.MessageThreadId);
+        }
+        if (update.Message.Text == ".гит")
+        {
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"ссылка на гит:\v {Git}", replyToMessageId: update.Message?.MessageThreadId);
         }
         Console.ReadLine();
     }
