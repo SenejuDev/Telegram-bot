@@ -2,11 +2,11 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-internal class Program
+class Program
 {
     private static void Main()
     {
-        Host @informationrandom_bot = new Host("7702174557:AAFfjbHUJaI1XneAkAfNOVBd4-nxLzk0sVA");
+        Host @informationrandom_bot = new Host("7702174557:AAHYyhe1O6q9JcflnnPswgZxdnDrC__D4mE");
         informationrandom_bot.Start();
         informationrandom_bot.OnMessage += OnMessage;
         Console.ReadLine();
@@ -24,35 +24,35 @@ internal class Program
 
         if (update.Message?.Text == "/start")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, "Добро пожаловать\fнапишите команду чтобы узнать все команды\f .команды\f .гит", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, "Добро пожаловать\fнапишите команду чтобы узнать все команды\f .команды", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message?.Text == ".команды")
+        else if (update.Message?.Text == ".команды")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"Ник:\f{update.Message.Chat.FirstName}\nкоманды:\f .канал\f .ник\f .айди\f .профиль\f .рандом", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"Ник:\f{update.Message.Chat.FirstName}\nкоманды:\f .канал\f .ник\f .айди\f .профиль\f .рандом\f .гит", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message?.Text == ".канал")
+        else if (update.Message?.Text == ".канал")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"ссылка на канал:\v {url}", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"ссылка на канал:\v {url}", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message?.Text == ".ник")
+        else if (update.Message?.Text == ".ник")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"Ваш ник:\v {update.Message.Chat.FirstName}", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"Ваш ник:\v {update.Message.Chat.FirstName}", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message?.Text == ".айди")
+        else if (update.Message?.Text == ".айди")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"Ваш айди:\v {update.Message.Chat.Id}", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"Ваш айди:\v {update.Message.Chat.Id}", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message?.Text == ".профиль")
+        else if (update.Message?.Text == ".профиль")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"Ваш ник:\v {update.Message.Chat.FirstName}\nВаш айди:\v {update.Message.Chat.Id}", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"Ваш ник:\v {update.Message.Chat.FirstName}\nВаш айди:\v {update.Message.Chat.Id}", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message.Text == ".рандом")
+        else if (update.Message.Text == ".рандом")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"Рандомное число\f{val}", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"Рандомное число\f{val}", replyToMessageId: update.Message?.MessageThreadId);
         }
-        if (update.Message.Text == ".гит")
+        else if (update.Message.Text == ".гит")
         {
-            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 7716117602, $"ссылка на гит:\v {Git}", replyToMessageId: update.Message?.MessageThreadId);
+            await client.SendTextMessageAsync(update.Message?.Chat.Id ?? 1639360124, $"ссылка на гит:\v {Git}", replyToMessageId: update.Message?.MessageThreadId);
         }
         Console.ReadLine();
     }
